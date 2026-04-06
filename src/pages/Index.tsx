@@ -59,7 +59,7 @@ function FaqBlock() {
 }
 
 export default function Index() {
-  const [formData, setFormData] = useState({ name: "", phone: "", level: "" });
+  const [formData, setFormData] = useState({ name: "", surname: "", phone: "", email: "", level: "" });
   const [submitted, setSubmitted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -429,24 +429,66 @@ export default function Index() {
 
           <div className="rounded-3xl p-8 md:p-12" style={{ backgroundColor: "rgba(250,246,240,0.95)", boxShadow: "0 20px 60px rgba(181,97,74,0.15)" }}>
             {submitted ? (
-              <div className="text-center py-8">
+              <div className="text-center">
                 <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: "var(--sage-light)" }}>
                   <Icon name="Check" size={28} style={{ color: "var(--sage)" }} />
                 </div>
-                <h3 className="font-display text-3xl mb-3" style={{ color: "var(--warm-brown)" }}>Заявка принята!</h3>
-                <p className="font-body text-base" style={{ color: "var(--warm-brown)", opacity: 0.72 }}>Светлана свяжется с вами в ближайшее время 🌿</p>
+                <h3 className="font-display text-3xl mb-2" style={{ color: "var(--warm-brown)" }}>Отлично, {formData.name}!</h3>
+                <p className="font-body text-base mb-8" style={{ color: "var(--warm-brown)", opacity: 0.72 }}>
+                  Осталось оплатить курс — переведите оплату по QR-коду или кнопке ниже
+                </p>
+
+                <div className="rounded-2xl p-6 mb-6 inline-block" style={{ backgroundColor: "white", boxShadow: "0 4px 20px rgba(181,97,74,0.12)" }}>
+                  <img
+                    src="https://cdn.poehali.dev/projects/ce4a157d-5ad6-400e-b3ce-c5c306802806/bucket/433457a6-9f11-4f7a-ab91-de9989c6c845.jpg"
+                    alt="QR-код для оплаты"
+                    className="w-48 h-48 mx-auto"
+                  />
+                  <p className="font-body text-sm mt-3" style={{ color: "var(--warm-brown)", opacity: 0.7 }}>Отсканируйте камерой телефона</p>
+                </div>
+
+                <div className="mb-6">
+                  <a
+                    href="https://www.sberbank.ru/ru/choise_bank?requisiteNumber=79059908696&bankCode=100000000111"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl font-body font-medium text-lg transition-all hover:shadow-lg hover:scale-[1.02]"
+                    style={{ backgroundColor: "var(--terracotta)", color: "var(--warm-cream)" }}
+                  >
+                    <Icon name="CreditCard" size={20} />
+                    Оплатить онлайн
+                  </a>
+                </div>
+
+                <p className="font-body text-sm" style={{ color: "var(--warm-brown)", opacity: 0.55 }}>
+                  После оплаты Светлана свяжется с вами по телефону {formData.phone}
+                </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block font-body text-base mb-2" style={{ color: "var(--warm-brown)" }}>Ваше имя *</label>
+                    <label className="block font-body text-base mb-2" style={{ color: "var(--warm-brown)" }}>Имя *</label>
                     <input
                       type="text"
                       required
                       value={formData.name}
                       onChange={e => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="Как вас зовут?"
+                      placeholder="Ваше имя"
+                      className="w-full px-4 py-3 rounded-2xl font-body text-base outline-none transition-all"
+                      style={{ backgroundColor: "var(--soft-peach)", border: "1.5px solid transparent", color: "var(--warm-brown)" }}
+                      onFocus={e => (e.target.style.borderColor = "var(--dusty-rose)")}
+                      onBlur={e => (e.target.style.borderColor = "transparent")}
+                    />
+                  </div>
+                  <div>
+                    <label className="block font-body text-base mb-2" style={{ color: "var(--warm-brown)" }}>Фамилия *</label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.surname}
+                      onChange={e => setFormData({ ...formData, surname: e.target.value })}
+                      placeholder="Ваша фамилия"
                       className="w-full px-4 py-3 rounded-2xl font-body text-base outline-none transition-all"
                       style={{ backgroundColor: "var(--soft-peach)", border: "1.5px solid transparent", color: "var(--warm-brown)" }}
                       onFocus={e => (e.target.style.borderColor = "var(--dusty-rose)")}
@@ -467,10 +509,25 @@ export default function Index() {
                       onBlur={e => (e.target.style.borderColor = "transparent")}
                     />
                   </div>
+                  <div>
+                    <label className="block font-body text-base mb-2" style={{ color: "var(--warm-brown)" }}>Email *</label>
+                    <input
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={e => setFormData({ ...formData, email: e.target.value })}
+                      placeholder="your@email.ru"
+                      className="w-full px-4 py-3 rounded-2xl font-body text-base outline-none transition-all"
+                      style={{ backgroundColor: "var(--soft-peach)", border: "1.5px solid transparent", color: "var(--warm-brown)" }}
+                      onFocus={e => (e.target.style.borderColor = "var(--dusty-rose)")}
+                      onBlur={e => (e.target.style.borderColor = "transparent")}
+                    />
+                  </div>
                 </div>
                 <div>
-                  <label className="block font-body text-base mb-2" style={{ color: "var(--warm-brown)" }}>Ваш уровень подготовки</label>
+                  <label className="block font-body text-base mb-2" style={{ color: "var(--warm-brown)" }}>Уровень подготовки *</label>
                   <select
+                    required
                     value={formData.level}
                     onChange={e => setFormData({ ...formData, level: e.target.value })}
                     className="w-full px-4 py-3 rounded-2xl font-body text-base outline-none transition-all"
@@ -490,7 +547,7 @@ export default function Index() {
                   className="w-full py-4 rounded-2xl font-body font-medium text-lg transition-all hover:shadow-lg hover:scale-[1.02] active:scale-[0.99]"
                   style={{ backgroundColor: "var(--terracotta)", color: "var(--warm-cream)" }}
                 >
-                  Записаться на курс
+                  Перейти к оплате
                 </button>
                 <p className="text-center font-body text-sm" style={{ color: "var(--warm-brown)", opacity: 0.55 }}>
                   Нажимая кнопку, вы соглашаетесь на обработку персональных данных
