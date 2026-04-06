@@ -1,6 +1,63 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
+const faqs = [
+  {
+    q: "Можно ли заниматься при грыже или протрузии?",
+    a: "Да — именно для этого курс и создан. Все упражнения имеют безопасные варианты для людей с грыжами и протрузиями. Перед началом мы рекомендуем проконсультироваться с врачом и сообщить Светлане о вашем диагнозе — она поможет выбрать подходящий уровень.",
+  },
+  {
+    q: "Я никогда не занималась физкультурой. Справлюсь?",
+    a: "Обязательно. Курс начинается с самых простых движений — лёжа, без нагрузки на позвоночник. Первый блок специально рассчитан на тех, кто начинает с нуля. Многие ученики Светланы говорят, что это первый формат, который им удалось выдержать до конца.",
+  },
+  {
+    q: "Сколько времени нужно уделять занятиям?",
+    a: "15–30 минут в день, 3–5 раз в неделю. Упражнения можно делать дома, без тренажёров и специального коврика. В бонусном блоке есть отдельный утренний комплекс на 15 минут.",
+  },
+  {
+    q: "Будет ли больно? Мне страшно навредить себе.",
+    a: "Боли быть не должно — это главный принцип курса. Если какое-то упражнение вызывает дискомфорт, всегда есть более мягкий вариант. Светлана объясняет, что чувствовать «правильно», а что — сигнал остановиться.",
+  },
+  {
+    q: "Как долго ждать результата?",
+    a: "Большинство учеников замечают снижение утренней скованности и боли уже через 2–3 недели. Устойчивый результат — формирование мышечного корсета и профилактика рецидивов — происходит к 5–6 неделе.",
+  },
+  {
+    q: "Что если я пропущу занятие или отстану?",
+    a: "Ничего страшного. Все материалы остаются у вас — можно возвращаться в удобном темпе. Куратор поддерживает на протяжении всего курса и помогает не потеряться.",
+  },
+];
+
+function FaqBlock() {
+  const [open, setOpen] = useState<number | null>(null);
+  return (
+    <div className="space-y-3">
+      {faqs.map((item, i) => (
+        <div
+          key={i}
+          className="rounded-2xl overflow-hidden transition-all"
+          style={{ border: open === i ? "1.5px solid rgba(181,97,74,0.3)" : "1.5px solid rgba(181,97,74,0.12)", backgroundColor: open === i ? "rgba(250,246,240,1)" : "rgba(250,246,240,0.7)", boxShadow: open === i ? "0 6px 24px rgba(181,97,74,0.10)" : "none" }}
+        >
+          <button
+            className="w-full flex items-center justify-between gap-4 px-7 py-5 text-left"
+            onClick={() => setOpen(open === i ? null : i)}
+          >
+            <span className="font-display text-xl" style={{ color: "var(--warm-brown)" }}>{item.q}</span>
+            <span className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all" style={{ backgroundColor: open === i ? "var(--terracotta)" : "var(--soft-peach)" }}>
+              <Icon name={open === i ? "Minus" : "Plus"} size={16} style={{ color: open === i ? "var(--warm-cream)" : "var(--terracotta)" }} />
+            </span>
+          </button>
+          {open === i && (
+            <div className="px-7 pb-6">
+              <p className="font-body text-base leading-relaxed" style={{ color: "var(--warm-brown)", opacity: 0.8 }}>{item.a}</p>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default function Index() {
   const [formData, setFormData] = useState({ name: "", phone: "", level: "" });
   const [submitted, setSubmitted] = useState(false);
@@ -439,6 +496,20 @@ export default function Index() {
               </form>
             )}
           </div>
+        </div>
+      </section>
+
+      {/* ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ */}
+      <section id="faq" className="py-24 px-6 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20" style={{ background: "radial-gradient(ellipse at 20% 60%, var(--sage-light) 0%, transparent 55%), radial-gradient(ellipse at 80% 20%, var(--soft-peach) 0%, transparent 50%)" }} />
+        <div className="max-w-3xl mx-auto relative z-10">
+          <div className="text-center mb-14">
+            <p className="font-body text-base uppercase tracking-widest mb-4" style={{ color: "var(--dusty-rose)" }}>Отвечаем честно</p>
+            <h2 className="font-display text-4xl md:text-5xl" style={{ color: "var(--warm-brown)" }}>
+              Часто задаваемые<br /><span className="italic gradient-text">вопросы</span>
+            </h2>
+          </div>
+          <FaqBlock />
         </div>
       </section>
 
