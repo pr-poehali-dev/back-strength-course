@@ -67,6 +67,8 @@
   body {
     @apply bg-background text-foreground;
     font-family: "Golos Text", sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
     background-color: var(--warm-cream);
   }
 
@@ -74,6 +76,12 @@
   h2,
   h3 {
     font-family: "Cormorant", serif;
+    line-height: 1.2;
+  }
+
+  p {
+    font-size: 1.05rem;
+    line-height: 1.85;
   }
 }
 

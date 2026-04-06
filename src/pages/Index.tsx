@@ -22,7 +22,7 @@ export default function Index() {
           </div>
           <div className="hidden md:flex items-center gap-8">
             {[["#problem", "Проблема"], ["#how", "Как помогает ЛФК"], ["#program", "Программа"], ["#results", "Результаты"], ["#about", "Об авторе"], ["#signup", "Записаться"]].map(([href, label]) => (
-              <a key={href} href={href} className="text-sm font-body transition-colors" style={{ color: "var(--warm-brown)", opacity: 0.8 }}
+              <a key={href} href={href} className="text-base font-body transition-colors" style={{ color: "var(--warm-brown)", opacity: 0.8 }}
                 onMouseEnter={e => (e.currentTarget.style.color = "var(--terracotta)")}
                 onMouseLeave={e => (e.currentTarget.style.color = "var(--warm-brown)")}
               >{label}</a>
@@ -35,7 +35,7 @@ export default function Index() {
         {menuOpen && (
           <div className="md:hidden mt-4 pb-4 flex flex-col gap-4 px-2">
             {[["#problem", "Проблема"], ["#how", "Как помогает ЛФК"], ["#program", "Программа"], ["#results", "Результаты"], ["#about", "Об авторе"], ["#signup", "Записаться"]].map(([href, label]) => (
-              <a key={href} href={href} className="text-sm font-body py-1" style={{ color: "var(--warm-brown)" }} onClick={() => setMenuOpen(false)}>{label}</a>
+              <a key={href} href={href} className="text-base font-body py-1" style={{ color: "var(--warm-brown)" }} onClick={() => setMenuOpen(false)}>{label}</a>
             ))}
           </div>
         )}
@@ -49,7 +49,7 @@ export default function Index() {
 
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
           <div className="animate-fade-up">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-body mb-6" style={{ backgroundColor: "var(--sage-light)", color: "var(--warm-brown)" }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-base font-body mb-6" style={{ backgroundColor: "var(--sage-light)", color: "var(--warm-brown)" }}>
               <Icon name="Leaf" size={14} />
               Лечебная физкультура для позвоночника
             </div>
@@ -57,17 +57,17 @@ export default function Index() {
               Верни себе<br />
               <span className="gradient-text italic">лёгкость движения</span>
             </h1>
-            <p className="font-body text-lg leading-relaxed mb-8" style={{ color: "var(--warm-brown)", opacity: 0.75 }}>
+            <p className="font-body text-xl leading-relaxed mb-8" style={{ color: "var(--warm-brown)", opacity: 0.75 }}>
               Авторский курс ЛФК — мягко, системно, без боли.<br />
               Адаптирован для грыж, протрузий и остеохондроза.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#signup" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-body font-medium text-base transition-all hover:shadow-lg hover:scale-105"
+              <a href="#signup" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-body font-medium text-lg transition-all hover:shadow-lg hover:scale-105"
                 style={{ backgroundColor: "var(--terracotta)", color: "var(--warm-cream)" }}>
                 Записаться на курс
                 <Icon name="ArrowRight" size={18} />
               </a>
-              <a href="#program" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-body font-medium text-base transition-all border"
+              <a href="#program" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-body font-medium text-lg transition-all border"
                 style={{ borderColor: "var(--dusty-rose)", color: "var(--terracotta)" }}>
                 Смотреть программу
               </a>
@@ -76,7 +76,7 @@ export default function Index() {
               {[["500+", "учеников прошли курс"], ["87%", "отмечают снижение боли"], ["12", "лет практики"]].map(([num, text]) => (
                 <div key={num} className="text-center">
                   <div className="font-display text-2xl font-semibold" style={{ color: "var(--terracotta)" }}>{num}</div>
-                  <div className="font-body text-xs mt-1" style={{ color: "var(--warm-brown)", opacity: 0.7 }}>{text}</div>
+                  <div className="font-body text-base mt-1" style={{ color: "var(--warm-brown)", opacity: 0.7 }}>{text}</div>
                 </div>
               ))}
             </div>
@@ -89,7 +89,7 @@ export default function Index() {
                 <div className="text-center">
                   <div className="font-display text-8xl mb-2" style={{ color: "var(--terracotta)", opacity: 0.3 }}>🌿</div>
                   <div className="font-display text-5xl italic" style={{ color: "var(--warm-brown)", opacity: 0.6 }}>ЛФК</div>
-                  <div className="font-body text-sm mt-2" style={{ color: "var(--warm-brown)", opacity: 0.5 }}>оздоровление позвоночника</div>
+                  <div className="font-body text-base mt-2" style={{ color: "var(--warm-brown)", opacity: 0.5 }}>оздоровление позвоночника</div>
                 </div>
               </div>
             </div>
@@ -97,7 +97,7 @@ export default function Index() {
         </div>
 
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
-          <div className="font-body text-xs" style={{ color: "var(--warm-brown)", opacity: 0.5 }}>листайте вниз</div>
+          <div className="font-body text-sm" style={{ color: "var(--warm-brown)", opacity: 0.5 }}>листайте вниз</div>
           <Icon name="ChevronDown" size={16} style={{ color: "var(--dusty-rose)" }} />
         </div>
       </section>
@@ -107,7 +107,7 @@ export default function Index() {
         <div className="absolute inset-0 opacity-30" style={{ background: "radial-gradient(ellipse at 80% 50%, var(--soft-peach) 0%, transparent 60%)" }} />
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <p className="font-body text-sm uppercase tracking-widest mb-4" style={{ color: "var(--dusty-rose)" }}>Реальность</p>
+            <p className="font-body text-base uppercase tracking-widest mb-4" style={{ color: "var(--dusty-rose)" }}>Реальность</p>
             <h2 className="font-display text-4xl md:text-5xl" style={{ color: "var(--warm-brown)" }}>
               Боль в спине — это не<br /><span className="italic gradient-text">«само пройдёт»</span>
             </h2>
@@ -124,7 +124,7 @@ export default function Index() {
                   <Icon name={icon} size={24} style={{ color }} />
                 </div>
                 <div className="font-display text-4xl font-semibold mb-3" style={{ color }}>{stat}</div>
-                <p className="font-body text-sm leading-relaxed" style={{ color: "var(--warm-brown)", opacity: 0.75 }}>{text}</p>
+                <p className="font-body text-base leading-relaxed" style={{ color: "var(--warm-brown)", opacity: 0.75 }}>{text}</p>
               </div>
             ))}
           </div>
@@ -139,7 +139,7 @@ export default function Index() {
                       <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style={{ backgroundColor: "var(--terracotta)" }}>
                         <Icon name="Check" size={12} style={{ color: "var(--warm-cream)" }} />
                       </div>
-                      <p className="font-body text-sm leading-relaxed" style={{ color: "var(--warm-brown)" }}>{item}</p>
+                      <p className="font-body text-base leading-relaxed" style={{ color: "var(--warm-brown)" }}>{item}</p>
                     </div>
                   ))}
                 </div>
@@ -149,7 +149,7 @@ export default function Index() {
                 <p className="font-display text-2xl italic leading-relaxed" style={{ color: "var(--warm-brown)" }}>
                   Правильное движение лечит лучше, чем его отсутствие. Важно знать — какое именно.
                 </p>
-                <p className="font-body text-sm mt-4" style={{ color: "var(--dusty-rose)" }}>— Светлана Конькова</p>
+                <p className="font-body text-base mt-4" style={{ color: "var(--dusty-rose)" }}>— Светлана Конькова</p>
               </div>
             </div>
           </div>
@@ -181,9 +181,9 @@ export default function Index() {
                   </div>
                 </div>
                 <div>
-                  <div className="font-display text-sm mb-1" style={{ color: "var(--dusty-rose)" }}>{num}</div>
+                  <div className="font-display text-base mb-1" style={{ color: "var(--dusty-rose)" }}>{num}</div>
                   <h3 className="font-display text-xl mb-2" style={{ color: "var(--warm-brown)" }}>{title}</h3>
-                  <p className="font-body text-sm leading-relaxed" style={{ color: "var(--warm-brown)", opacity: 0.72 }}>{desc}</p>
+                  <p className="font-body text-base leading-relaxed" style={{ color: "var(--warm-brown)", opacity: 0.72 }}>{desc}</p>
                 </div>
               </div>
             ))}
@@ -200,8 +200,8 @@ export default function Index() {
                 <div key={level} className="text-center p-6 rounded-2xl" style={{ backgroundColor: "rgba(250,246,240,0.7)" }}>
                   <div className="text-3xl mb-3">{emoji}</div>
                   <div className="font-display text-lg mb-2" style={{ color: "var(--warm-brown)" }}>{level}</div>
-                  <p className="font-body text-xs leading-relaxed mb-3" style={{ color: "var(--warm-brown)", opacity: 0.7 }}>{desc}</p>
-                  <span className="inline-block px-3 py-1 rounded-full font-body text-xs" style={{ backgroundColor: "var(--sage-light)", color: "var(--warm-brown)" }}>{tag}</span>
+                  <p className="font-body text-sm leading-relaxed mb-3" style={{ color: "var(--warm-brown)", opacity: 0.7 }}>{desc}</p>
+                  <span className="inline-block px-3 py-1 rounded-full font-body text-sm" style={{ backgroundColor: "var(--sage-light)", color: "var(--warm-brown)" }}>{tag}</span>
                 </div>
               ))}
             </div>
@@ -240,7 +240,7 @@ export default function Index() {
                   </div>
                   <ul className="space-y-2">
                     {topics.map(t => (
-                      <li key={t} className="flex items-center gap-2 font-body text-sm" style={{ color: "var(--warm-brown)", opacity: 0.78 }}>
+                      <li key={t} className="flex items-center gap-2 font-body text-base" style={{ color: "var(--warm-brown)", opacity: 0.78 }}>
                         <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "var(--terracotta)" }} />
                         {t}
                       </li>
@@ -274,17 +274,17 @@ export default function Index() {
                   <div className="w-12 h-12 rounded-full flex items-center justify-center font-display text-xl" style={{ backgroundColor: "var(--blush)", color: "var(--terracotta)" }}>{initials}</div>
                   <div>
                     <div className="font-display text-base" style={{ color: "var(--warm-brown)" }}>{name}</div>
-                    <div className="font-body text-xs" style={{ color: "var(--dusty-rose)" }}>{result}</div>
+                    <div className="font-body text-sm" style={{ color: "var(--dusty-rose)" }}>{result}</div>
                   </div>
                 </div>
                 <div className="space-y-4">
                   <div className="p-4 rounded-2xl" style={{ backgroundColor: "rgba(212,145,126,0.1)" }}>
                     <div className="font-body text-xs uppercase tracking-wider mb-2" style={{ color: "var(--dusty-rose)" }}>До курса</div>
-                    <p className="font-body text-sm leading-relaxed" style={{ color: "var(--warm-brown)", opacity: 0.8 }}>{before}</p>
+                    <p className="font-body text-base leading-relaxed" style={{ color: "var(--warm-brown)", opacity: 0.8 }}>{before}</p>
                   </div>
                   <div className="p-4 rounded-2xl" style={{ backgroundColor: "rgba(154,181,138,0.15)" }}>
                     <div className="font-body text-xs uppercase tracking-wider mb-2" style={{ color: "var(--sage)" }}>После курса</div>
-                    <p className="font-body text-sm leading-relaxed" style={{ color: "var(--warm-brown)", opacity: 0.8 }}>{after}</p>
+                    <p className="font-body text-base leading-relaxed" style={{ color: "var(--warm-brown)", opacity: 0.8 }}>{after}</p>
                   </div>
                 </div>
               </div>
@@ -300,7 +300,7 @@ export default function Index() {
             ].map(({ num, label }) => (
               <div key={num} className="text-center py-8 rounded-3xl" style={{ backgroundColor: "rgba(250,246,240,0.7)", border: "1px solid rgba(181,97,74,0.1)" }}>
                 <div className="font-display text-4xl font-semibold mb-2 gradient-text">{num}</div>
-                <div className="font-body text-xs leading-snug" style={{ color: "var(--warm-brown)", opacity: 0.7 }}>{label}</div>
+                <div className="font-body text-sm leading-snug" style={{ color: "var(--warm-brown)", opacity: 0.7 }}>{label}</div>
               </div>
             ))}
           </div>
@@ -318,13 +318,13 @@ export default function Index() {
                 <div className="absolute inset-4 watercolor-blob flex items-center justify-center" style={{ background: "rgba(250,246,240,0.6)" }}>
                   <div className="text-center">
                     <div className="font-display text-6xl mb-2" style={{ color: "var(--terracotta)", opacity: 0.5 }}>С·К</div>
-                    <div className="font-body text-xs" style={{ color: "var(--warm-brown)", opacity: 0.6 }}>фото автора</div>
+                    <div className="font-body text-sm" style={{ color: "var(--warm-brown)", opacity: 0.6 }}>фото автора</div>
                   </div>
                 </div>
               </div>
               <div className="absolute -bottom-4 -right-4 px-4 py-3 rounded-2xl shadow-lg" style={{ backgroundColor: "var(--warm-cream)", border: "1px solid rgba(181,97,74,0.15)" }}>
                 <div className="font-display text-lg" style={{ color: "var(--terracotta)" }}>12 лет</div>
-                <div className="font-body text-xs" style={{ color: "var(--warm-brown)", opacity: 0.7 }}>практики</div>
+                <div className="font-body text-sm" style={{ color: "var(--warm-brown)", opacity: 0.7 }}>практики</div>
               </div>
             </div>
 
@@ -344,7 +344,7 @@ export default function Index() {
                     <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "var(--sage-light)" }}>
                       <Icon name="Check" size={12} style={{ color: "var(--sage)" }} />
                     </div>
-                    <span className="font-body text-sm" style={{ color: "var(--warm-brown)" }}>{credential}</span>
+                    <span className="font-body text-base" style={{ color: "var(--warm-brown)" }}>{credential}</span>
                   </div>
                 ))}
               </div>
@@ -381,7 +381,7 @@ export default function Index() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block font-body text-sm mb-2" style={{ color: "var(--warm-brown)" }}>Ваше имя *</label>
+                    <label className="block font-body text-base mb-2" style={{ color: "var(--warm-brown)" }}>Ваше имя *</label>
                     <input
                       type="text"
                       required
@@ -395,7 +395,7 @@ export default function Index() {
                     />
                   </div>
                   <div>
-                    <label className="block font-body text-sm mb-2" style={{ color: "var(--warm-brown)" }}>Телефон *</label>
+                    <label className="block font-body text-base mb-2" style={{ color: "var(--warm-brown)" }}>Телефон *</label>
                     <input
                       type="tel"
                       required
@@ -410,7 +410,7 @@ export default function Index() {
                   </div>
                 </div>
                 <div>
-                  <label className="block font-body text-sm mb-2" style={{ color: "var(--warm-brown)" }}>Ваш уровень подготовки</label>
+                  <label className="block font-body text-base mb-2" style={{ color: "var(--warm-brown)" }}>Ваш уровень подготовки</label>
                   <select
                     value={formData.level}
                     onChange={e => setFormData({ ...formData, level: e.target.value })}
@@ -428,12 +428,12 @@ export default function Index() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full py-4 rounded-2xl font-body font-medium text-base transition-all hover:shadow-lg hover:scale-[1.02] active:scale-[0.99]"
+                  className="w-full py-4 rounded-2xl font-body font-medium text-lg transition-all hover:shadow-lg hover:scale-[1.02] active:scale-[0.99]"
                   style={{ backgroundColor: "var(--terracotta)", color: "var(--warm-cream)" }}
                 >
                   Записаться на курс
                 </button>
-                <p className="text-center font-body text-xs" style={{ color: "var(--warm-brown)", opacity: 0.55 }}>
+                <p className="text-center font-body text-sm" style={{ color: "var(--warm-brown)", opacity: 0.55 }}>
                   Нажимая кнопку, вы соглашаетесь на обработку персональных данных
                 </p>
               </form>
@@ -448,7 +448,7 @@ export default function Index() {
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div>
               <div className="font-display text-2xl mb-2" style={{ color: "var(--terracotta)" }}>Светлана Конькова</div>
-              <p className="font-body text-sm leading-relaxed" style={{ color: "var(--warm-brown)", opacity: 0.7 }}>
+              <p className="font-body text-base leading-relaxed" style={{ color: "var(--warm-brown)", opacity: 0.7 }}>
                 Реабилитолог, инструктор ЛФК.<br />12 лет восстанавливаю позвоночник.
               </p>
             </div>
@@ -465,8 +465,8 @@ export default function Index() {
                       <Icon name={icon} size={14} style={{ color: "var(--terracotta)" }} />
                     </div>
                     <div>
-                      <div className="font-body text-xs" style={{ color: "var(--warm-brown)", opacity: 0.55 }}>{label}</div>
-                      <div className="font-body text-sm" style={{ color: "var(--warm-brown)" }}>{text}</div>
+                      <div className="font-body text-sm" style={{ color: "var(--warm-brown)", opacity: 0.55 }}>{label}</div>
+                      <div className="font-body text-base" style={{ color: "var(--warm-brown)" }}>{text}</div>
                     </div>
                   </div>
                 ))}
@@ -486,17 +486,17 @@ export default function Index() {
                   </a>
                 ))}
               </div>
-              <p className="font-body text-xs mt-4 leading-relaxed" style={{ color: "var(--warm-brown)", opacity: 0.6 }}>
+              <p className="font-body text-sm mt-4 leading-relaxed" style={{ color: "var(--warm-brown)", opacity: 0.6 }}>
                 Подписывайтесь — там бесплатные упражнения и советы каждую неделю
               </p>
             </div>
           </div>
 
           <div className="border-t pt-8 flex flex-col md:flex-row items-center justify-between gap-4" style={{ borderColor: "rgba(181,97,74,0.15)" }}>
-            <p className="font-body text-xs" style={{ color: "var(--warm-brown)", opacity: 0.5 }}>
+            <p className="font-body text-sm" style={{ color: "var(--warm-brown)", opacity: 0.5 }}>
               © 2024 Светлана Конькова. Все права защищены.
             </p>
-            <a href="#" className="font-body text-xs" style={{ color: "var(--warm-brown)", opacity: 0.5 }}>
+            <a href="#" className="font-body text-sm" style={{ color: "var(--warm-brown)", opacity: 0.5 }}>
               Политика конфиденциальности
             </a>
           </div>
