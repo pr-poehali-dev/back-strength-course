@@ -567,7 +567,7 @@ export default function Index() {
 
           <div className="border-t pt-8 flex flex-col md:flex-row items-center justify-between gap-4" style={{ borderColor: "rgba(181,97,74,0.15)" }}>
             <p className="font-body text-sm" style={{ color: "var(--warm-brown)", opacity: 0.5 }}>
-              © 2024 Светлана Конькова. Все права защищены.
+              © 2026 Школа ушу Светланы Коньковой. Все права защищены.
             </p>
             <a href="#" className="font-body text-sm" style={{ color: "var(--warm-brown)", opacity: 0.5 }}>
               Политика конфиденциальности
