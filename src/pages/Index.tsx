@@ -119,18 +119,18 @@ export default function Index() {
               Адаптирован для грыж, протрузий и остеохондроза.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#signup" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-body font-medium text-lg transition-all hover:shadow-lg hover:scale-105"
+              <a href="#signup" className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full font-body font-medium text-lg transition-all hover:shadow-lg hover:scale-105 whitespace-nowrap"
                 style={{ backgroundColor: "var(--terracotta)", color: "var(--warm-cream)" }}>
                 Записаться на курс
                 <Icon name="ArrowRight" size={18} />
               </a>
-              <a href="#program" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-body font-medium text-lg transition-all border"
+              <a href="#program" className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full font-body font-medium text-lg transition-all border whitespace-nowrap"
                 style={{ borderColor: "var(--dusty-rose)", color: "var(--terracotta)" }}>
                 Смотреть программу
               </a>
             </div>
             <div className="mt-10 flex items-center gap-6">
-              {[["500+", "учеников прошли курс"], ["87%", "отмечают снижение боли"], ["12", "лет практики"]].map(([num, text]) => (
+              {[["150+", "учеников прошли курс"], ["87%", "отмечают снижение боли"], ["12", "лет практики"]].map(([num, text]) => (
                 <div key={num} className="text-center">
                   <div className="font-display text-2xl font-semibold" style={{ color: "var(--terracotta)" }}>{num}</div>
                   <div className="font-body text-base mt-1" style={{ color: "var(--warm-brown)", opacity: 0.7 }}>{text}</div>
@@ -350,7 +350,7 @@ export default function Index() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { num: "500+", label: "учеников прошли курс" },
+              { num: "150+", label: "учеников прошли курс" },
               { num: "87%", label: "снизили интенсивность боли" },
               { num: "6 нед", label: "до устойчивого результата" },
               { num: "12", label: "лет авторской практики" },
@@ -369,39 +369,41 @@ export default function Index() {
         <div className="absolute left-0 top-0 w-96 h-96 opacity-20 watercolor-blob-2" style={{ background: "radial-gradient(ellipse, var(--sage-light) 0%, transparent 70%)" }} />
         <div className="max-w-5xl mx-auto relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Фото автора */}
             <div className="relative flex justify-center">
-              <div className="relative w-72 h-72">
-                <div className="absolute inset-0 watercolor-blob" style={{ background: "linear-gradient(135deg, var(--soft-peach) 0%, var(--blush) 50%, var(--sage-light) 100%)" }} />
-                <div className="absolute inset-4 watercolor-blob flex items-center justify-center" style={{ background: "rgba(250,246,240,0.6)" }}>
-                  <div className="text-center">
-                    <div className="font-display text-6xl mb-2" style={{ color: "var(--terracotta)", opacity: 0.5 }}>С·К</div>
-                    <div className="font-body text-sm" style={{ color: "var(--warm-brown)", opacity: 0.6 }}>фото автора</div>
-                  </div>
-                </div>
+              <div className="relative w-72 md:w-80" style={{ aspectRatio: "3/4" }}>
+                {/* Акварельный фон за фото */}
+                <div className="absolute -inset-4 watercolor-blob opacity-60" style={{ background: "linear-gradient(135deg, var(--soft-peach) 0%, var(--blush) 50%, var(--sage-light) 100%)" }} />
+                <img
+                  src="https://cdn.poehali.dev/projects/ce4a157d-5ad6-400e-b3ce-c5c306802806/bucket/41c574ed-3a2d-4673-b121-cc96b9efcae0.jpg"
+                  alt="Светлана Конькова — инструктор ЛФК"
+                  className="relative z-10 w-full h-full object-cover rounded-3xl shadow-lg"
+                  style={{ objectPosition: "top center" }}
+                />
               </div>
-              <div className="absolute -bottom-4 -right-4 px-4 py-3 rounded-2xl shadow-lg" style={{ backgroundColor: "var(--warm-cream)", border: "1px solid rgba(181,97,74,0.15)" }}>
-                <div className="font-display text-lg" style={{ color: "var(--terracotta)" }}>12 лет</div>
-                <div className="font-body text-sm" style={{ color: "var(--warm-brown)", opacity: 0.7 }}>практики</div>
+              <div className="absolute -bottom-4 -right-2 md:-right-6 px-4 py-3 rounded-2xl shadow-lg z-20" style={{ backgroundColor: "var(--warm-cream)", border: "1px solid rgba(181,97,74,0.15)" }}>
+                <div className="font-display text-lg" style={{ color: "var(--terracotta)" }}>150+</div>
+                <div className="font-body text-sm" style={{ color: "var(--warm-brown)", opacity: 0.7 }}>учеников</div>
               </div>
             </div>
 
             <div>
               <p className="font-body text-sm uppercase tracking-widest mb-3" style={{ color: "var(--dusty-rose)" }}>Об авторе</p>
               <h2 className="font-display text-4xl mb-2" style={{ color: "var(--warm-brown)" }}>Светлана Конькова</h2>
-              <p className="font-body text-base mb-6" style={{ color: "var(--terracotta)" }}>Реабилитолог, инструктор ЛФК, кинезиолог</p>
+              <p className="font-body text-base mb-6" style={{ color: "var(--terracotta)" }}>Специалист по физической культуре, инструктор ЛФК</p>
               <p className="font-body text-base leading-relaxed mb-6" style={{ color: "var(--warm-brown)", opacity: 0.78 }}>
-                12 лет помогаю людям вернуть лёгкость движения после травм, операций и с хроническими диагнозами. Прошла путь от боли в спине к собственной практике — знаю, как страшно начинать и как важно делать это правильно.
+                Помогаю людям вернуть лёгкость движения — мягко и безопасно. Знаю, как страшно начинать, когда есть диагноз, и как важно делать это правильно.
               </p>
               <p className="font-body text-base leading-relaxed mb-8" style={{ color: "var(--warm-brown)", opacity: 0.78 }}>
-                Специализируюсь на работе с грыжами позвоночника, протрузиями и остеохондрозом. Каждое упражнение в курсе — проверено клинически и адаптировано под реальные ограничения.
+                Специализируюсь на работе с грыжами позвоночника, протрузиями и остеохондрозом. Каждое упражнение в курсе адаптировано под реальные ограничения и проверено на практике.
               </p>
               <div className="grid grid-cols-2 gap-4">
-                {["Реабилитолог", "Инструктор ЛФК", "Кинезиолог", "Автор программ"].map(credential => (
-                  <div key={credential} className="flex items-center gap-2">
-                    <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "var(--sage-light)" }}>
+                {["Специалист по физической культуре", "Инструктор ЛФК", "150+ учеников прошли курс", "Безопасный подход при диагнозах"].map(credential => (
+                  <div key={credential} className="flex items-start gap-2">
+                    <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ backgroundColor: "var(--sage-light)" }}>
                       <Icon name="Check" size={12} style={{ color: "var(--sage)" }} />
                     </div>
-                    <span className="font-body text-base" style={{ color: "var(--warm-brown)" }}>{credential}</span>
+                    <span className="font-body text-base leading-snug" style={{ color: "var(--warm-brown)" }}>{credential}</span>
                   </div>
                 ))}
               </div>
